@@ -1,0 +1,49 @@
+
+
+package tests;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class Tests {
+
+   
+    public static void main(String[] args) throws FileNotFoundException {
+        Scanner scan=new Scanner(System.in);
+
+   System.out.print("Number Of Conections:");
+   int Servers=scan.nextInt();
+   double Number = Servers/2-1;
+   int column = (int) Number;
+
+   
+   for (int i =0;i<1;i++)
+   {
+     
+      int row = Servers-1;
+      int [][] FatalConnection = new int [row][column];
+      System.out.println(row);
+      System.out.println(column);
+  
+   }
+   for (int u = 1;u <= Servers;u++)
+   {
+      int [][] Connections;
+      double Sec_column = 0;
+      Sec_column = Servers/u;
+       System.out.println(Sec_column);
+      
+   }
+  
+    }
+}
+
+//Link Do Problema:https://leetcode.com/problems/critical-connections-in-a-network/
+
+    
+
