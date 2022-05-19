@@ -1,11 +1,11 @@
 
-package wildcardmatching;
+package Path_Matix;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 
-public class WildCardMatching {
+public class Path_Matrix {
 
  
     public static void main(String[] args) 
@@ -42,5 +42,6 @@ public class WildCardMatching {
        }
 }
 }
+
 
 //Link:https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
