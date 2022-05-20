@@ -1,0 +1,63 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package candy;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author PTC_AppDev_Trainee
+ */
+public class Candy {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("How much kids are going to receive a candy? (Max:200000 Kids)");
+        int KidsNum = scan.nextInt();
+        int[]grades = new int [20000000];
+        int Diff = 20000000-KidsNum;
+        System.out.println("What are the kids grades?");
+        int count1=0;
+        int count2=0;
+        int count3=0;
+        for (int i =0;i < KidsNum;i++)
+        {
+            grades[i] = scan.nextInt();
+            
+        }
+        System.out.println("The respective kids receive:");
+        for (int u = 0;u <grades.length-Diff;u++)
+        {
+            if (grades[u]< grades[u+1])
+            {
+                System.out.println("1");
+                count1++;
+            }
+            
+            else if (grades[u]>grades[u+1])
+            {
+//                System.out.println("2");
+                count2=count2+2;
+            }
+            else if(grades[u]== grades[u+1])
+            {
+//                System.out.println("1");
+                count3++;
+            }
+            
+            
+        }
+        int soma = count1+count2+count3;
+        System.out.println(soma);
+        
+    }
+    
+}
+
+//link:https://leetcode.com/problems/candy/
