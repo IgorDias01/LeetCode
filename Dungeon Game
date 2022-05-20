@@ -1,0 +1,114 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package text_justification;
+
+import java.lang.reflect.Array;
+import java.util.Scanner;
+import java.util.Random;
+
+/**
+ *
+ * @author PTC_AppDev_Trainee
+ */
+public class Text_Justification {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+   int health = 20;
+   int decesive = 0;
+   Random rand = new Random();
+   int position = 0;
+  
+   Scanner scan=new Scanner(System.in);
+   int rownumb =3;
+   int rowssize=3;
+   int table = 3*3;
+   int[] numbers = new int[table];
+   decesive = table-1;
+   System.out.println("Welcome to the Dungeon game :),dont forget this is a basic and lucky game,have fun!");
+   for(int i =0;i < table;i++)
+   {
+     int min = -20;
+     int max=20;
+     int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+     numbers[i]=random_int;
+
+   }
+        System.out.println("Lets go save the princess!");
+        for(int r=0;r < numbers.length-decesive;r++)
+        {
+            System.out.println("|"+"You"+"|"+"|"+numbers[r+1]+"|"+numbers[r+2]+"|");
+        }
+        for(int r=0;r < numbers.length-decesive;r++)
+        {
+            System.out.println(""+"|"+numbers[r+3]+"|"+numbers[r+4]+"|"+numbers[r+5]+"|");
+        }
+        for(int r=0;r < numbers.length-decesive;r++)
+        {
+            System.out.println(""+"|"+numbers[r+6]+"|"+numbers[r+7]+"|"+numbers[r+8]+"|"+"----->Princess");
+        }
+        for(int z =1;z<numbers.length;z++)
+        {
+            System.err.println("Health||"+health);
+            System.out.println("Choose tour direction:Right||Down");
+            String Decision = scan.nextLine();
+            if (Decision.equals("Right"))
+            {
+                position=position+1;
+               if(numbers[position]<0)
+               {
+                   System.out.println("Oh no,you got attack by an Monster you lose :"+numbers[position]);
+                   health = health-numbers[position];
+                  
+               }
+               if(numbers[position]>0)
+               {
+                   System.out.println("You caugth a potion that can heal or maximize your health:"+numbers[position]);
+                   health = health+numbers[position];
+                  
+               }
+            }
+            else if (Decision.equals("Down"))
+            {
+                position=position+3;
+                if(numbers[position]<0)
+               {
+                   
+                    System.out.println("Oh no,you got attack by an Monster you lose :"+numbers[position]);
+                   health = health - numbers[position];
+                   
+
+               }
+                
+             if(numbers[position]>0)
+               {
+                   System.out.println("You caugth a potion that can heal or maximize your health"+numbers[position]);
+                   health = health+numbers[position];
+                  
+               }
+            }
+             if(numbers[position] == numbers[8])
+             {
+                 System.out.println("You win!!");
+                 break;
+             }
+             if(health == 0)
+             {
+                 System.out.println("You lose, better luck next time!");
+                 break;
+             }
+        }
+    
+   
+    }
+    }
+    
+
+
+//link:https://leetcode.com/problems/dungeon-game/
+//Modifiquei bastante o original para ser mais divertido e so um pouco mais complexo
