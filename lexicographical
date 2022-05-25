@@ -1,0 +1,71 @@
+package lexicographical.order;
+import java.util.Scanner;
+import static javafx.application.Platform.exit;
+public class LexicographicalOrder {
+
+    public static void main(String[] args)
+    {
+      Scanner scan=new Scanner(System.in);
+        System.out.println("Tell how many number you will choose: (Max:10)");
+        int n = scan.nextInt();
+        if(n > 10)
+     {
+         System.out.println("Too high!!");
+         System.exit(n);
+    }
+        int numbers [] = new int[10];
+        int firstDigit = 0;
+        int SecondDigit;
+        int ThirdDigit;
+        int firstDigit1 = 0;
+        int SecondDigit1;
+        int ThirdDigit1;
+     
+        System.out.println("Tell me the numbers:(max 3 digits)");
+        for (int i=0;i < n;i++)
+        {
+            numbers[i]=scan.nextInt();      
+        }
+       
+        for (int i =0;i < numbers.length;i++)
+        {
+           if (numbers[i]<10)
+                {
+                firstDigit = Integer.parseInt(Integer.toString(numbers[i]).substring(0, 1));  
+                System.out.println(firstDigit);
+                }
+            if (numbers[i+1]<10)
+                {
+                firstDigit1 = Integer.parseInt(Integer.toString(numbers[i]).substring(0, 1));  
+               
+                }
+            if (firstDigit1>firstDigit)
+            {
+                System.out.println(numbers[i+1]);
+            }
+            else if(firstDigit1<firstDigit)
+            {
+                System.out.println(numbers[i ]);
+            }
+            if(numbers[i]>10 && numbers[i]<100)
+                    {
+                firstDigit = Integer.parseInt(Integer.toString(numbers[i]).substring(0, 1));
+                SecondDigit = Integer.parseInt(Integer.toString(numbers[i]).substring(1, 2));
+         
+           
+                    }
+            if(numbers[i]>100 && numbers[i] <1000)
+            {
+                firstDigit = Integer.parseInt(Integer.toString(numbers[i]).substring(0, 1));
+                SecondDigit = Integer.parseInt(Integer.toString(numbers[i]).substring(1, 2));
+                ThirdDigit = Integer.parseInt(Integer.toString(numbers[i]).substring(2, 3));
+                 
+            }  
+             
+        }
+       
+
+ 
+   
+}
+}
