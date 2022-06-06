@@ -1,0 +1,39 @@
+
+package kth_smallest_number_in_multiplication_table;
+
+import java.util.Scanner;
+
+public class Kth_Smallest_Number_in_Multiplication_Table {
+
+  
+    public static void main(String[] args) {
+         
+         Scanner scan=new Scanner(System.in);
+         System.out.println("Tell the columns of the matrix:");
+         int y = scan.nextInt();
+         System.out.println("Tell me that you want to be divid:");
+         int x = scan.nextInt();
+         System.out.println("Tell me the numbers of the table ");
+         int xy = x*y;
+         int c=0;
+         int []table = new int [xy+1];
+         for(int i=0 ;i < xy; i++)
+         {
+             table[i] = scan.nextInt();
+         }
+         for(int u =0;u <=xy;u++)
+         {
+             int Multi1=0;
+             int Multi2=0;
+             for(int i = 0;i<=xy;i++)
+             {
+                 Multi1=table[i]*table[i+1];
+                 Multi2=table[i]*table[i+x];
+                
+             }
+              System.out.println(Multi1);
+              System.out.println(Multi2);
+         }     
+    }
+    
+}
