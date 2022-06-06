@@ -1,0 +1,51 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package dicerollsimulation;
+
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ *
+ * @author PTC_AppDev_Trainee
+ */
+public class DiceRollSimulation {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       Scanner scan=new Scanner(System.in);
+       System.out.println("Tell me your number of dices:");
+       int x = scan.nextInt();
+       System.out.println("Tell me the number:");
+       int numb = scan.nextInt();
+       Random rand = new Random(); //instance of random class
+       int upperbound = 6;
+      int count =0;
+       int possible = 1;
+       for(int i = 0; i < x;i++)
+       {
+           possible = possible*6;
+       }
+       for(int i = 0; i < possible; i++)
+       {
+           int DiceNumber = rand.nextInt(upperbound);
+           if(DiceNumber == numb)
+           {
+               count++;
+           }
+          
+       }
+        System.out.println("The possibilities that this number will not apear is:");
+        System.out.println(possible-count+"/"+possible);
+        System.out.println("In this case:"); 
+        System.out.println(count);
+        
+         
+    }
+    
+}
