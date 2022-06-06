@@ -1,0 +1,63 @@
+package leasttoperatorstoexpressnumber;
+
+import java.util.Scanner;
+import static javafx.application.Platform.exit;
+
+public class LeasttOperatorstoExpressNumber {
+
+    public static void main(String[] args) 
+   {
+         Scanner scan=new Scanner(System.in);
+         System.out.println("Tell me your x?");
+         int x = scan.nextInt();
+         int Sum = x;
+         System.out.println("Tell me your target:");
+         int Final = scan.nextInt();
+         for(int i =0; i < 20; i++)
+         if(x < Final)
+    {
+             if(x == 1)
+             {
+                 Sum=Sum+x;
+                 System.out.println("|"+x+"+"+x);
+             }
+             if(Final-Sum <= 5)
+             {
+                 Sum = Sum + (x/x);
+                 System.out.println(x+"/"+ x);
+             }
+             if(Final-Sum >6)
+             {
+             Sum=Sum*x;
+                 System.out.println(x +"*"+ x);
+             }
+             if(Final-Sum == x )
+             {
+                 Sum=x+x;
+                 System.out.println(x +"+"+ x);
+             }
+             if(Sum > Final)
+        {
+             if(Sum-Final > 10)
+             {
+                 Sum=Sum/x;
+                 System.out.println(x +"/"+ x);
+                
+             }
+             else if(Sum-Final < 10)
+             {
+                 Sum=Sum-x;
+                 System.out.println(x+"-"+x);
+                 
+             }
+        }
+             if(Sum == Final)
+             {
+                 exit();
+             }
+         
+    }
+       
+  }
+    
+}
