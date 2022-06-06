@@ -1,0 +1,103 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package roman.to.integer;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+
+public class RomanToInteger {
+
+    
+    public static void main(String[] args)throws IOException, java.lang.NumberFormatException {
+        int I = 0;
+        int IV =0;
+        int IX = 0;
+        int VI = 0;
+        int XL = 0;
+        int XC = 0;
+        int CD = 0;
+        int CM = 0;
+        
+        
+        int v = 0;
+        int x = 0;
+        int l = 0;
+        int c = 0;
+        int d = 0;
+        int m = 0;
+        Scanner sc= new Scanner(System.in); 
+        System.out.println("Insert your Roman Number:");
+        String str= sc.nextLine(); 
+        
+        if(str!=null && str.length()!=0) {
+            char Roma = str.charAt(0);
+		}
+
+        int a = 0;
+       for (a =0;a<=str.length();a++)
+        for (int i =0;i<str.length();i++)
+    {
+        char Roma = str.charAt(i);  
+        a++;
+        char Excessao = str.charAt(a);   
+        
+        if (Roma == 'I' && Excessao == 'V')
+       {
+           IV++;
+       }else if (Roma == 'I'&& Excessao == 'X')
+       {
+           IX++;
+       }else if (Roma == 'I')
+       {
+           I++;
+       }
+        
+        if (Roma == 'V')
+        {
+            v++;
+        }
+        
+        if (Roma == 'X' && Excessao == 'l')
+        {
+            XL++;
+        }else if (Roma == 'X' && Excessao == 'C')
+        {
+            XC++;
+        }else if (Roma == 'X')
+        {
+            x++;
+        }
+        
+        if (Roma == 'L')
+        {
+            l++;
+        }
+        if (Roma == 'C'&& Excessao == 'D')
+        {
+            CD++;
+        }else if (Roma == 'C' && Excessao == 'M')
+        {
+            CM++;
+        }else if (Roma == 'C')
+        {
+            c++;
+        }
+        if (Roma == 'D')
+        {
+            d++;
+        }
+        if (Roma == 'M')
+        {
+            m++;
+        }
+   
+    }
+       int soma = (I*1)+(v*5)+(x*10)+(l*50)+(c*100)+(d*500)+(m*1000)+(IV*4)+(IX*9)+(XL*40)+(XC*90)+(CD*400)+(CM*900);
+        System.out.println(soma);
+       }
+       
+}
