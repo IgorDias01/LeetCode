@@ -1,0 +1,21 @@
+package pigstodie;
+public class PigstoDie {
+
+    public static void main(String[] args) {
+      int buckets=1000;
+      int Minutes = 15;
+      int Test = 60;
+      int count = 0;
+        int Dummy = (Test/Minutes) + 1;
+        
+        int total = 1;
+        while (total < buckets) {
+            total =total * Dummy;
+            count++;
+        }
+        System.out.println(count);
+      
+    }
+    }
+    
+
