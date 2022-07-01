@@ -1,0 +1,67 @@
+package frogjump;
+public class FrogJump 
+{
+    public static void main(String[] args) 
+            
+   {
+         int frog[]=new int[8];
+         frog[0]=0;
+         frog[1]=1;  
+         frog[2]=3;
+         frog[3]=5;
+         frog[4]=6;
+         frog[5]=8;
+         frog[6]=12;
+         frog[7]=17;
+         int forward = 2;
+         int a =1;
+         int b=2;
+         boolean Jump = false;
+         int diff=0;
+         int diff2=0;
+         int notuse=0;
+            for(int i =0; i < frog.length;i++)
+         {
+           diff=frog[a]-frog[i];
+           diff2=frog[b]-frog[i];
+           
+           if(diff2==forward)
+           {
+               a=a+b;
+               i++;
+               b++;
+           }
+           if(diff==1)
+           {
+               a++;
+               Jump=true;
+               notuse=1;
+           }
+           
+           if(diff==forward)
+           {
+               i=i++;
+               a=a++;
+               forward=forward+1;
+               Jump=true;
+               notuse=0;
+           }
+           if(diff==-1)
+           {
+               a++;
+               forward=2;  
+               Jump=true;
+           }
+           if(notuse==1)
+           {
+               forward=2;
+           }
+           if(diff!=forward && diff!=1 && diff!=-1)
+           {
+               Jump=false;
+           }
+           
+         }
+         System.out.println(Jump);
+    }   
+}
