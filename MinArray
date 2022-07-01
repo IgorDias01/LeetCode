@@ -1,0 +1,28 @@
+package minarray;
+public class MinArray {
+
+    public static void main(String[] args) {
+         int a[]=new int[3];//declaration and instantiation  
+         a[0]=8;
+         a[1]=3;  
+         a[2]=5;
+         for(int i =0; i < 3;i++)
+         {
+             System.out.println(a[i]);
+         }
+         int count = 1000000000;
+         
+         for(int i = 0;i < a.length;i++)
+         {
+             if(a[i]<count)
+             {
+                 count = a[i];
+             }
+         }
+         System.out.println(count);
+ 
+         
+         
+    }
+    
+}
