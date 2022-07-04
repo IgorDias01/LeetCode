@@ -1,0 +1,103 @@
+package largestrectangle;
+public class LargestRectangle {
+
+    public static void main(String[] args) 
+    {
+       int heights[]=new int[6];
+         heights[0]=2;
+         heights[1]=4;  
+         heights[2]=5;
+         heights[3]=6;
+         heights[4]=2;
+         heights[5]=3;
+         
+         int a =1;
+         int b=2;
+         
+         int firstsom;
+         int secondsom;
+         int thirdsom;
+         int forthsom;
+         
+         int som=0;
+         int som1=0;
+         
+         int count=0;
+         
+         
+         for(int i =0; i < heights.length;i++)
+         {
+             firstsom=heights[i]-heights[a]; 
+             secondsom=heights[a]-heights[i];
+             
+             thirdsom=heights[a]-heights[b];
+             forthsom=heights[b]-heights[a];
+             
+             if(firstsom>0)
+             {
+                if(thirdsom > 0)
+                {
+                   som=heights[i]+heights[a]-firstsom;
+                   som1=heights[a]+heights[b]-thirdsom;
+                   if(som>som1)
+                   {
+                       count=som;
+                   }
+                   if(som1>som)
+                   {
+                       count=som1;
+                   }
+                }
+                if(forthsom > 0)
+                {
+                   som=heights[i]+heights[a]-firstsom;
+                   som1=heights[a]+heights[b]-thirdsom;
+                   if(som>som1)
+                   {
+                       count=som;
+                   }
+                   if(som1>som)
+                   {
+                       count=som1;
+                   }
+                    
+                }
+             }
+             
+             if(secondsom>0)
+             {
+                 if(thirdsom > 0)
+                {
+                   som=heights[a]+heights[i]-secondsom;
+                   som1=heights[a]+heights[b]-thirdsom;
+                   if(som>som1)
+                   {
+                       count=som;
+                   }
+                   if(som1>som)
+                   {
+                       count=som1;
+                   }
+                }
+                if(forthsom > 0)
+                {
+                   som=heights[a]+heights[i]-firstsom;
+                   som1=heights[a]+heights[b]-thirdsom;
+                   if(som>som1)
+                   {
+                       count=som;
+                   }
+                   if(som1>som)
+                   {
+                       count=som1;
+                   }
+                    
+                }
+             }
+            
+         }
+           System.out.println(count);
+             
+    }
+    
+}
