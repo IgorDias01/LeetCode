@@ -1,4 +1,4 @@
-package besttimetobuy;
+ package besttimetobuy;
 public class BestTimetoBuy {
 
     public static void main(String[] args) {
@@ -13,7 +13,8 @@ public class BestTimetoBuy {
          price[5]=3;
          price[6]=1;
          price[7]=4;
-          int firstb = Integer.MIN_VALUE;
+         
+      int firstb = Integer.MIN_VALUE;
          int firsts = 0;
          int secondb = Integer.MIN_VALUE;
          int seconds = 0;
@@ -24,8 +25,9 @@ public class BestTimetoBuy {
         seconds = Math.max(seconds,secondb+price[i]);
     }
         System.out.println(seconds);
-}
-         
     }
+    
+}
+
     
 
